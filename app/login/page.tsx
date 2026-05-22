@@ -1,8 +1,10 @@
 import Link from "next/link"
 
-export default function register(){
+
+export default function login(){
     return(
-         <div className="w-full h-screen flex items-center justify-center">
+        
+        <div className="w-full h-screen flex items-center justify-center">
   
   <div className="bg-blue-500 w-72 p-4 rounded-sm shadow-lg">
     
@@ -15,11 +17,7 @@ export default function register(){
     </p>
 
     <form className="flex flex-col gap-3">
-      <input
-        type="text"
-        placeholder="Name"
-        className="bg-gray-200 p-2 rounded outline-none text-sm"
-      />
+
       <input
         type="email"
         placeholder="Email"
@@ -35,14 +33,14 @@ export default function register(){
       <div className="flex items-center gap-3">
 
         <button className="bg-blue-800 text-white px-4 py-1 rounded text-sm hover:bg-blue-900">
-          Register
+          Login
         </button>
 
        <div className="flex col-span-2">
             <p className="text-[10px] text-white">
-              Alredy a user  ?   
+              New User ?   
             </p>
-            <Link className="text-[10px] text-white"  href={'/login'}>Click here to <span className="text-blue-900 outline-blue-900">Login</span></Link>
+            <Link className="text-[10px] text-white"  href={'/register'}>Click here to <span className="text-blue-900 outline-blue-900">Regiter</span></Link>
             
             
             
