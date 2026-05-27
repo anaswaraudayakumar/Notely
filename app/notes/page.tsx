@@ -1,9 +1,16 @@
+
+import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { FaRegStickyNote, FaTrash, FaPowerOff } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 import { IoPerson } from "react-icons/io5";
 
-export default function Dashboard(){
+export default  function Dashboard(){
+  const {data:session} = useSession()
+  if(!session){
+    redirect('/login')
+  }
     return(
           <div className="min-h-screen ">
 
@@ -19,7 +26,7 @@ export default function Dashboard(){
 
           <div className="flex items-center gap-1">
             <IoPerson className="text-sm" />
-            <p className="text-sm">username</p>
+            <p className="text-sm">{session?.user?.name}</p>
           </div>
 
           <FaPowerOff className="cursor-pointer" />
